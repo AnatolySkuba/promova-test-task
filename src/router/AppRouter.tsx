@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 
 import { About, Main, Rates } from 'pages';
-import ROUTER_KEYS from 'consts';
+import { ROUTER_KEYS } from 'consts';
 
 function AppRouter() {
   return (

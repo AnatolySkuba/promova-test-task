@@ -1,6 +1,9 @@
-const ROUTER_KEYS = {
+export const ROUTER_KEYS = {
   RATES: 'rates',
   ABOUT: 'about',
 };
 
-export default ROUTER_KEYS;
+export const QUERY_KEYS = {
+  ROOT: '/',
+  LATEST: 'latest',
+};

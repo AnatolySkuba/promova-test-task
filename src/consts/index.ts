@@ -1,3 +1,2 @@
-import ROUTER_KEYS from './keys';
-
-export default ROUTER_KEYS;
+export * from './keys';
+export * from './api';
