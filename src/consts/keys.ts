@@ -1,4 +1,6 @@
-export const ROUTER_KEYS = {
+const ROUTER_KEYS = {
   RATES: 'rates',
   ABOUT: 'about',
 };
+
+export default ROUTER_KEYS;

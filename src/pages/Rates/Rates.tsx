@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Rates = () => {
+function Rates() {
   return <h1>Rates</h1>;
-};
+}
 
 export default Rates;
