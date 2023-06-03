@@ -45,7 +45,7 @@ function Rate({ data, valueTarget, setValueTarget }: Props) {
       <Box
         sx={{
           display: 'flex',
-          p: 7,
+          p: 7.6,
         }}
       >
         <TextField

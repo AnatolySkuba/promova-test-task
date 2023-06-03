@@ -10,8 +10,8 @@ import {
   Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import SortIcon from '@mui/icons-material/Sort';
 
+import { Navigation } from 'components';
 import formatDate from 'helpers';
 import { Data } from 'types';
 import {
@@ -66,7 +66,7 @@ function Currency({ data, setValueTarget }: Props) {
         }}
       >
         <Typography sx={{ fontSize: 'small' }}>{formattedDate}</Typography>
-        <SortIcon />
+        <Navigation />
       </Box>
       <Box
         sx={{
@@ -83,7 +83,8 @@ function Currency({ data, setValueTarget }: Props) {
       <Box
         sx={{
           display: 'flex',
-          p: 7,
+          mt: 5,
+          px: 7.6,
         }}
       >
         <TextField

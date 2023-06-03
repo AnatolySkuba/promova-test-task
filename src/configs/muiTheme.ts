@@ -67,16 +67,6 @@ function muiTheme(outerTheme: Theme) {
           },
         },
       },
-      MuiIconButton: {
-        styleOverrides: {
-          root: {
-            '&:hover': {
-              transform: 'translate(0, -50%) rotate(90deg) scale(1.1)',
-              backgroundColor: 'white',
-            },
-          },
-        },
-      },
     },
   });
 }

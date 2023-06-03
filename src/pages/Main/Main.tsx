@@ -32,7 +32,9 @@ function Main() {
   }
 
   if (!isLoading && !isError && !valueTarget) {
-    setValueTarget((VALUE_DEFAULT_BASE / data.rates[currencyBase]) * data.rates[currencyTarget]);
+    const valueDefaultBase =
+      Number(localStorage.getItem(STORAGE_KEYS.VALUE_BASE)) || VALUE_DEFAULT_BASE;
+    setValueTarget((valueDefaultBase / data.rates[currencyBase]) * data.rates[currencyTarget]);
   }
 
   const changeCurrency = () => {
@@ -63,16 +65,31 @@ function Main() {
           onClick={changeCurrency}
           sx={{
             position: 'absolute',
+            p: 0,
             top: '50%',
             right: 25,
             transform: 'translate(0, -50%) rotate(90deg)',
+            transition: 'transform 0.3s ease',
             backgroundColor: 'white',
             borderRadius: 1.5,
             color: '#fc8380',
             boxShadow: '0 0 20px 2px rgba(0, 0, 0, 0.2)',
+            '&& :hover': {
+              transform: 'scale(1.1)',
+              backgroundColor: 'white',
+              borderRadius: 1.5,
+            },
           }}
         >
-          <SyncAltIcon />
+          <SyncAltIcon
+            sx={{
+              p: 1,
+              '&& :hover': {
+                transform: 'scale(1)',
+                transition: 'transform 0.3s ease',
+              },
+            }}
+          />
         </IconButton>
       </Box>
     </Box>
