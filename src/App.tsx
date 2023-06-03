@@ -1,16 +1,20 @@
 import React from 'react';
 import { QueryClientProvider } from 'react-query';
+import { ThemeProvider, useTheme } from '@mui/material/styles';
 
 import AppRouter from 'router/AppRouter';
-import queryClient from 'configs/queryClient';
-
+import { muiTheme, queryClient } from 'configs';
 import './App.css';
 
 function App() {
+  const outerTheme = useTheme();
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <AppRouter />
-    </QueryClientProvider>
+    <ThemeProvider theme={muiTheme(outerTheme)}>
+      <QueryClientProvider client={queryClient}>
+        <AppRouter />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

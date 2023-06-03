@@ -7,7 +7,7 @@ async function getRates() {
   try {
     const response = await axios.get(url);
 
-    return response;
+    return response.data;
   } catch (error) {
     if (error instanceof Error) throw new Error(error.message);
   }
