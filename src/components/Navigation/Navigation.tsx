@@ -14,7 +14,7 @@ function Navigation() {
     if (str === ROUTER_KEYS.ROOT) {
       return 'Main';
     }
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return str.charAt(1).toUpperCase() + str.slice(2);
   }
 
   return (

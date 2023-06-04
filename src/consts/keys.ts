@@ -1,11 +1,10 @@
 export const ROUTER_KEYS = {
   ROOT: '/',
-  RATES: 'rates',
-  ABOUT: 'about',
+  RATES: '/rates',
+  ABOUT: '/about',
 };
 
 export const QUERY_KEYS = {
-  ROOT: '/',
   LATEST: 'latest',
 };
 

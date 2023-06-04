@@ -23,7 +23,7 @@ import {
 
 type Props = {
   data: Data;
-  setValueTarget: Dispatch<SetStateAction<number>>;
+  setValueTarget?: Dispatch<SetStateAction<number>>;
 };
 
 function Currency({ data, setValueTarget }: Props) {
@@ -36,15 +36,21 @@ function Currency({ data, setValueTarget }: Props) {
   const valueDefaultBase = localStorage.getItem(STORAGE_KEYS.VALUE_BASE) || VALUE_DEFAULT_BASE;
 
   const changeValueTarget = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setValueTarget((+event.target.value / data.rates[currencyBase]) * data.rates[currencyTarget]);
     localStorage.setItem(STORAGE_KEYS.VALUE_BASE, event.target.value);
+    if (setValueTarget) {
+      setValueTarget((+event.target.value / data.rates[currencyBase]) * data.rates[currencyTarget]);
+    } else {
+      setSearchParams({ currencyBase, currencyTarget });
+    }
   };
 
   const changeCurrency = (event: SelectChangeEvent<string>) => {
-    const valueBase = Number(localStorage.getItem(STORAGE_KEYS.VALUE_BASE)) || VALUE_DEFAULT_BASE;
+    const valueBase = Number(localStorage.getItem(STORAGE_KEYS.VALUE_BASE)) ?? VALUE_DEFAULT_BASE;
     const newCurrencyBase = currencies[+event.target.value];
     setSearchParams({ currencyBase: newCurrencyBase, currencyTarget });
-    setValueTarget((valueBase / data.rates[newCurrencyBase]) * data.rates[currencyTarget]);
+    if (setValueTarget) {
+      setValueTarget((valueBase / data.rates[newCurrencyBase]) * data.rates[currencyTarget]);
+    }
   };
 
   return (
@@ -128,5 +134,9 @@ function Currency({ data, setValueTarget }: Props) {
     </Box>
   );
 }
+
+Currency.defaultProps = {
+  setValueTarget: undefined,
+};
 
 export default Currency;

@@ -22,6 +22,9 @@ function Rate({ data, valueTarget, setValueTarget }: Props) {
   const currencyTarget = searchParams.get('currencyTarget') || CURRENCY_DEFAULT_TARGET;
   const currencies = Object.keys(data.rates);
   const currencyIndex = currencies.indexOf(currencyTarget).toString();
+  const valueBaseFromStorage = localStorage.getItem(STORAGE_KEYS.VALUE_BASE);
+  const valueTargetCorrect =
+    valueBaseFromStorage === null || Number(valueBaseFromStorage) > 0 ? valueTarget : 0;
 
   const changeCurrency = (event: SelectChangeEvent<string>) => {
     const newCurrencyTarget = currencies[+event.target.value];
@@ -50,7 +53,7 @@ function Rate({ data, valueTarget, setValueTarget }: Props) {
       >
         <TextField
           id="standard-basic"
-          value={valueTarget.toFixed(4)}
+          value={valueTargetCorrect}
           inputProps={{ style: { padding: 0, fontSize: 50, color: 'var(--secondary-color)' } }}
           sx={{
             '&& .MuiInput-root:hover:not(.Mui-disabled, .Mui-error):before': {
