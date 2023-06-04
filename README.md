@@ -32,7 +32,7 @@ To run the application follow these steps:
    ```
 2. Install NPM packages
    ```sh
-   npm install
+   yarn
    ```
 3. Paste yor token to .env.development file or use my token
    ```sh
@@ -44,7 +44,7 @@ To run the application follow these steps:
 To start the application locally:
 
 ```sh
-npm start
+yarn start
 ```
 
 Then open http://localhost:3000
