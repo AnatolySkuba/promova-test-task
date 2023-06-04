@@ -12,7 +12,6 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { Navigation } from 'components';
-import formatDate from 'helpers';
 import { Data } from 'types';
 import {
   CURRENCY_DEFAULT_BASE,
@@ -20,6 +19,7 @@ import {
   STORAGE_KEYS,
   VALUE_DEFAULT_BASE,
 } from 'consts';
+import formatDate from '../../helpers';
 
 type Props = {
   data: Data;

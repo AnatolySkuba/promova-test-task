@@ -4,7 +4,6 @@ import { ThemeProvider, useTheme } from '@mui/material/styles';
 
 import AppRouter from 'router/AppRouter';
 import { muiTheme, queryClient } from 'configs';
-import './App.css';
 
 function App() {
   const outerTheme = useTheme();

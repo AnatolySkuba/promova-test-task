@@ -3,7 +3,6 @@ type Rates = {
 };
 
 export type Data = {
-  base: string;
   date: string;
   rates: Rates;
 };

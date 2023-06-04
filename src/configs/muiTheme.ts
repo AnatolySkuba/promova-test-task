@@ -74,6 +74,21 @@ function muiTheme(outerTheme: Theme) {
           },
         },
       },
+      MuiTableRow: {
+        styleOverrides: {
+          root: {
+            '&:nth-of-type(odd)': {
+              backgroundColor: '#e3e3e3',
+            },
+            '&:nth-of-type(even)': {
+              backgroundColor: '#f8f8f8',
+            },
+            '&:last-child td, &:last-child th': {
+              border: 0,
+            },
+          },
+        },
+      },
     },
   });
 }
