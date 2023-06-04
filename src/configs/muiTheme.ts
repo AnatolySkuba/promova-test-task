@@ -67,6 +67,13 @@ function muiTheme(outerTheme: Theme) {
           },
         },
       },
+      MuiTypography: {
+        styleOverrides: {
+          root: {
+            textIndent: '1.5em',
+          },
+        },
+      },
     },
   });
 }
