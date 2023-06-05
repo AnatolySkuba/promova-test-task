@@ -61,7 +61,7 @@ function Navigation() {
                 }}
               >
                 <Link
-                  to={route}
+                  to={`${route}${location.search}`}
                   style={{
                     color: 'red',
                     width: '100%',
