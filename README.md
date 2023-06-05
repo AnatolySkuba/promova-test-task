@@ -28,7 +28,7 @@ To run the application follow these steps:
 
 1. Clone the repository
    ```sh
-   git clone https://github.com/AnatolySkuba/promova-test-task
+   git clone https://github.com/AnatolySkuba/promova-test-task .
    ```
 2. Install NPM packages
    ```sh
